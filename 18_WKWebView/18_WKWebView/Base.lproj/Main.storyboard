@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iwL-dv-ClJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_8_WKWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ui3-CR-cxE">
+                                <rect key="frame" x="112" y="140" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="alt-HL-E3y"/>
+                                    <constraint firstAttribute="width" constant="150" id="kb4-QS-Xwh"/>
+                                </constraints>
+                                <state key="normal" title="Browser" image="yandex"/>
+                                <connections>
+                                    <segue destination="739-AM-xrR" kind="show" id="gwf-cM-0Vg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTR-fP-ttJ">
+                                <rect key="frame" x="112" y="328" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Fsp-2l-bZ3"/>
+                                    <constraint firstAttribute="height" constant="150" id="k1X-cn-Wzr"/>
+                                </constraints>
+                                <state key="normal" title="Browser" image="pdf"/>
+                                <connections>
+                                    <segue destination="Zdi-5h-4hq" kind="show" id="eHN-17-Ee3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ui3-CR-cxE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="7LG-5z-eyv"/>
+                            <constraint firstItem="eTR-fP-ttJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Cyo-2c-a7T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eTR-fP-ttJ" secondAttribute="bottom" constant="189" id="LXD-DY-A8u"/>
+                            <constraint firstItem="Ui3-CR-cxE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sfb-5M-XmZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dJc-lE-MDv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="-564.46776611694156"/>
+        </scene>
+        <!--PDFViewer-->
+        <scene sceneID="5H8-Da-8j3">
+            <objects>
+                <viewController title="PDFViewer" id="Zdi-5h-4hq" customClass="PDFViewController" customModule="_8_WKWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YPu-UZ-vdu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-NA-Qzk">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XsD-sO-a5K"/>
+                                    <barButtonItem systemItem="add" id="pEz-4p-Jnp">
+                                        <connections>
+                                            <action selector="shareAction:" destination="Zdi-5h-4hq" id="tbX-R2-gFV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="u6r-vJ-VEP"/>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="czo-lu-C8l">
+                                <rect key="frame" x="177" y="355.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="czo-lu-C8l" firstAttribute="centerY" secondItem="uca-el-Ibs" secondAttribute="centerY" id="KQT-uc-wY3"/>
+                            <constraint firstItem="czo-lu-C8l" firstAttribute="centerX" secondItem="uca-el-Ibs" secondAttribute="centerX" id="PRm-ze-0YM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uca-el-Ibs"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="czo-lu-C8l" id="zG4-UA-KOS"/>
+                        <outlet property="myToolbar" destination="6nY-NA-Qzk" id="NqU-mW-DXQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6g-js-ejo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1588" y="-212"/>
+        </scene>
+        <!--Browser-->
+        <scene sceneID="1me-Ly-Kky">
+            <objects>
+                <viewController title="Browser" id="739-AM-xrR" customClass="BrowserViewController" customModule="_8_WKWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xS2-GL-rkM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J6P-Zr-ElI">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="zYd-Fn-sXQ">
+                                        <connections>
+                                            <action selector="goBackAction:" destination="739-AM-xrR" id="NBi-Pl-Pqf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="fastForward" id="1Xj-Es-AaP">
+                                        <connections>
+                                            <action selector="goForwardAction:" destination="739-AM-xrR" id="Ze4-al-6v9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aVs-DU-t3k"/>
+                                    <barButtonItem systemItem="refresh" id="V9o-hh-anq">
+                                        <connections>
+                                            <action selector="refreshAction:" destination="739-AM-xrR" id="yqC-tj-Od8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="do0-tf-cP9"/>
+                    </view>
+                    <connections>
+                        <outlet property="goBackItem" destination="zYd-Fn-sXQ" id="g9P-KS-2nm"/>
+                        <outlet property="goForwardItem" destination="1Xj-Es-AaP" id="FUc-Df-6uE"/>
+                        <outlet property="myToolbar" destination="J6P-Zr-ElI" id="DbF-CX-C4X"/>
+                        <outlet property="reloadItem" destination="V9o-hh-anq" id="X66-rI-OSP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cB5-Co-4Ta" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1588" y="-866"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HwR-kr-MJf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iwL-dv-ClJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sqA-ng-u9H">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="D5s-Mi-yTB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AEj-9S-7je" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7" y="-564"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pdf" width="1024" height="1024"/>
+        <image name="yandex" width="512" height="512"/>
+    </resources>
+</document>
